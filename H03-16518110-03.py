@@ -10,7 +10,7 @@
 # B : int
 
 # Fungsi
-def komposit(x):                # Fungsi untuk menghitung faktorial
+def komposit(x):                # Fungsi untuk menentukan suatu bilangan komposit atau tidak
     # Kamus Lokal
     # IsKomposit = bool apakah bil x komposit
     # i = int counter
@@ -26,7 +26,7 @@ def komposit2(x , y):
     # Kamus Lokal
     # IsKomposit2 = bool apakah bil x dan y pasangan komposit
     IsKomposit2 = False         # Nilai awal IsKomposit2, nilai awal false, akan menjadi true jika kondisi terpenuhi
-    if (komposit(x) == True) and (komposit(y) == True) and (komposit(x + y) == True): #Syarat IsKomposit2 menjadi true sesuai soal
+    if (komposit(x)) and (komposit(y)) and (komposit(x + y)): #Syarat IsKomposit2 menjadi true sesuai soal
         IsKomposit2 = True
     return IsKomposit2
 
@@ -40,4 +40,4 @@ print ("Pasangan bilangan komposit:")
 for i in range (A, B+1):        # Selama i bernilai A sampai B
     for j in range (A, B+1):    # dan j bernilai A sampai B
         if (komposit2(i , j) == True) and (i < j):  # Jika i dan j pasangan komposit dan i < j, maka
-            print(str(i) + " " + str(j))            # program akan menceta i dan j
+            print(str(i) + " " + str(j))            # program akan mencetak i dan j
