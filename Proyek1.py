@@ -1,5 +1,5 @@
 # NIM/Nama : 16518008/Basilius Agung Yason Sunarya, 16518110/Kendrik Emkel Ginting, 16518212/Ilham Rayhan, 16518314/Feroz Fernando
-# Tanggal : 17 Oktober 2018
+# Tanggal : 17 Oktober 2018 (Updated 28 Oktober 2018)
 # Deskripsi : Program Proyek 1 Polinom
 
 # Program Polinom
@@ -10,14 +10,15 @@
 # Menu  : string pilihan menu yang dipilih user
 
 # Fungsi dan Prosedur
-def Cetak(x):   # Fungsi untuk mencetak sebuah polinom
+def Cetak(x):   # Prosedur untuk mencetak sebuah polinom
     # Kamus Lokal
     # pertama: bool apakah pangkat tertinggi sudah dicetak
     # i: int counter
+    # i1 : suku terbesar
     pertama = 0     # Untuk mencetak nilai pertama (pangkat tertinggi)
     i = 99          # i = 99 sebagai counter sesuai dengan kemungkinan pangkat tertinggi
     while ((pertama == 0) and (i >= 0)):    # Selama nilai pertama belum dicetak dan i antara 99 sampai 0, program mengulang. Program akan keluar setelah nilai pertama != 0
-        if(x[i] != 0):                      # Jika koefisien polinom tidak sama dengan 0 (ada),
+        if(x[i] != 0):                      # Jika koefisien polinom tidak sama dengan 0 (polinom ada),
             pertama = 1                     # Nilai pertama ditemukan dan akan dicetak
             if(i != 0) and (i != 1):        # Jika pangkat tidak sama dengan 0 dan 1,
                 if(x[i] == 1):              # Jika koefisien satu
@@ -41,6 +42,10 @@ def Cetak(x):   # Fungsi untuk mencetak sebuah polinom
                 print(str(x[i]))    # Program akan mencetak k saja
             i1 = i                  # Program akan mengingat pangkat tertinggi agar tidak tercetak lagi nanti
         i -= 1                      # i akan selalu berkurang 1 setiap program berjalan sesuai urutan
+
+    if(pertama == 0):      # Jika pertama == 0 (polimon kosong)
+        i1 = 0             # suku terbesar = 0
+        print(str(x[i1]))  # Prorgam mencetak 0
 
     for i in range(99, -1 ,-1):     # Untuk i di antara 99 sampai -1, secara mundur
         if (x[i] != 0) and (i != i1):   # Jika koefisien tidak 0 dan pangkat tidak sama dengan i1 (pangkat yang sudah dicetak)
@@ -67,9 +72,8 @@ def Cetak(x):   # Fungsi untuk mencetak sebuah polinom
                     print("+ " + str(x[i]), end=" ")    # Program akan mencetak + k
                 elif (x[i] < 0):        # Jika koefisien lebih kecil dari 0
                     print("- " + str(-1 * x[i]), end=" ")   # Program akan mencetak - k
-    print()         # Cetak baris kosong untuk kerapian
 
-def PolIn(x, n):                # Fungsi untuk Input Polinom x. n berguna hanya untuk proses pencetakan "Masukkan polinom ke-n..."
+def PolIn(x, n):    # Prosedur untuk Input Polinom x. n berguna hanya untuk proses pencetakan "Masukkan polinom ke-n..."
     # Kamus Lokal
     # IsFinished = bool apakah input sudah selesai
     # suku = int suku ke- sekian
@@ -110,10 +114,10 @@ def Kurang(x1, x2, x3):
     else:                   # Jika IsNull False
         Cetak(x3)           # Program akan mencetak polinom hasil
 
-def Turunan(x1, x3):        # Fungsi untuk mencetak turunan dari x1 yang disimpan di x3
+def Turunan(x1, x3):        # Prosedur untuk mencetak turunan dari x1 yang disimpan di x3
     for i in range (99):    # Untuk i dari 1 sebanyak 99 kali [0, 98]
         x3[i] = x1[i+1] * (i+1) # Misalnya turunan dari 2x adalah 2, pada x3 disimpan di index 0 (tak berpangkat), nilainya adalah koefisien dikali pangkat dari index (pangkat) 1 di polinom awal
-    Cetak(x3)               # Progra akan mencetak polinom 3
+    Cetak(x3)               # Program akan mencetak polinom 3
 
 def Menu():                 # Prosedur menu dari program
     print("Menu Program Polinom")
@@ -126,6 +130,7 @@ def Menu():                 # Prosedur menu dari program
 
 # Algoritma
 print("Program Polinom")
+print("Masukkan polinom dengan format yang tersedia, jika tidak program akan error.")
 print("Silakan masukkan kedua polinom Anda.")
 print()
 
