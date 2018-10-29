@@ -45,7 +45,7 @@ def Cetak(x):   # Prosedur untuk mencetak sebuah polinom
 
     if(pertama == 0):      # Jika pertama == 0 (polimon kosong)
         i1 = 0             # suku terbesar = 0
-        print(str(x[i1]))  # Prorgam mencetak 0
+        print(str(x[i1]), end="")  # Prorgam mencetak 0
 
     for i in range(99, -1 ,-1):     # Untuk i di antara 99 sampai -1, secara mundur
         if (x[i] != 0) and (i != i1):   # Jika koefisien tidak 0 dan pangkat tidak sama dengan i1 (pangkat yang sudah dicetak)
@@ -72,6 +72,7 @@ def Cetak(x):   # Prosedur untuk mencetak sebuah polinom
                     print("+ " + str(x[i]), end=" ")    # Program akan mencetak + k
                 elif (x[i] < 0):        # Jika koefisien lebih kecil dari 0
                     print("- " + str(-1 * x[i]), end=" ")   # Program akan mencetak - k
+    print()
 
 def PolIn(x, n):    # Prosedur untuk Input Polinom x. n berguna hanya untuk proses pencetakan "Masukkan polinom ke-n..."
     # Kamus Lokal
@@ -142,7 +143,7 @@ while(menu != "0"):             # Selama menu yang dipilih bukan 0, program akan
         print("Polinom ke-1 yang Anda masukkan adalah:")
         Cetak(p1)               # Program akan mencetak polinom 1
         print("Polinom ke-2 yang Anda masukkan adalah:")
-        Cetak(p2)               # Program akan mencetak polinom 2
+        Cetak(p2)               # Program akan mencetak polinom 
         print("Pekerjaan menu ini selesai. Silakan memilih menu lain.")
         print()
     elif(menu == "2"):          # Jika menu yang dipilih adalah 2
