@@ -89,30 +89,14 @@ def PolIn(x, n):    # Prosedur untuk Input Polinom x. n berguna hanya untuk pros
             x[int(suku)] = int(nilai)   # Nilai dari suku akan dimasukkan ke array sesuai dengan sukunya
 
 def Jml(x1, x2, x3):        # Fungsi untuk penjumlahan 2 polinom x1 dan x2 dengan x3 sebagai polinom hasilnya
-    # Kamus Lokal
-    # IsNull = bool apakah jumlah kedua polinom 0 pada seluruh pangkat (seluruh array)
-    IsNull = 1              # Nilai awal adalah True
     for i in range (100):   # Untuk i dari 0 berulang sebanyak 100 kali
         x3[i] = x1[i] + x2[i]   # Jumlah dari pangkat yang sama akan disimpan di array ketiga pada pangkat yang sama pula
-        if(x3[i] != 0):     # Jika terdapat 1 saja hasil penjumlahan yang tidak 0
-            IsNull = 0      # Maka IsNull False
-    if (IsNull == 1):       # Jika IsNull True
-        print(str(0))       # Program akan mencetak jumlah kedua polinom 0
-    else:                   # Jika IsNull False
-        Cetak(x3)           # Program akan mencetak polinom hasil
+    Cetak(x3)           # Program akan mencetak polinom hasil
 
 def Kurang(x1, x2, x3):
-    # Kamus Lokal
-    # IsNull = bool apakah pengurangan polinom pertama denga kedua 0 pada seluruh pangkat (seluruh array)
-    IsNull = 1              # Nilai awal adalah True
     for i in range (100):   # Untuk i dari 0 berulang sebanyak 100 kali
         x3[i] = x1[i] - x2[i]   # Polinom pertama dikurang polinom kedua pada pangkat yang sama akan disimpan di array ketiga pada pangkat yang sama pula
-        if(x3[i] != 0):     # Jika terdapat 1 saja hasil penjumlahan yang tidak 0
-            IsNull = 0      # Maka IsNull False
-    if (IsNull == 1):       # Jika IsNull True
-        print(str(0))       # Program akan mencetak hasil polinom pertama dikurangi kedua 0
-    else:                   # Jika IsNull False
-        Cetak(x3)           # Program akan mencetak polinom hasil
+    Cetak(x3)           # Program akan mencetak polinom hasil
 
 def Turunan(x1, x3):        # Prosedur untuk mencetak turunan dari x1 yang disimpan di x3
     for i in range (99):    # Untuk i dari 1 sebanyak 99 kali [0, 98]
