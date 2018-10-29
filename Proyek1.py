@@ -1,5 +1,5 @@
 # NIM/Nama : 16518008/Basilius Agung Yason Sunarya, 16518110/Kendrik Emkel Ginting, 16518212/Ilham Rayhan, 16518314/Feroz Fernando
-# Tanggal : 17 Oktober 2018 (Updated 28 Oktober 2018)
+# Tanggal : 17 Oktober 2018 (Updated 29 Oktober 2018)
 # Deskripsi : Program Proyek 1 Polinom
 
 # Program Polinom
